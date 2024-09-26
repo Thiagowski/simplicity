@@ -87,3 +87,14 @@ body{
 
             background-color: var(--cor-clara);
         }
+        
+        .destaque {
+            height: 75vh;
+            background-image: url(../imagens/fundo-destaque.jpg);
+            background-attachment: fixed;
+            color: var(--cor-clara);
+            text-align: center;   
+            display: flex;
+            flex-direction: column;
+            justify-content: center;         
+        }
