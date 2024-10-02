@@ -192,6 +192,19 @@ article address {
     color: var(--cor-intermediaria);
     text-shadow: 5px 7px 5px #e6810d80; /*causa o efeito de sombra, os 3 px define a altura largura e espacamento da sombra*/
 }
+
+.historia iframe {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.localizacao iframe {
+    width: 100%;
+    margin-top: 2rem;
+
+}
+
 .video{
     margin-bottom: 2rem; /*Adiciona uma margem inferior de 2rem.*/
     max-width: 700px; /*Limita a largura máxima mesmo que o container permita mais espaço*/
@@ -227,3 +240,43 @@ article address {
     border-bottom: solid 1px; /*borda entre titulo*/
 }
  
+/* Regras para tabela */
+
+table { 
+    border: solid 4px var(--cor-escura);
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    
+    /* Remove o espaçamento entre as bordas */
+    border-collapse: collapse;
+}
+
+caption {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding-bottom: 0.3rem;
+}
+
+th, td {
+    border: solid 1px var(--cor-escura);
+}
+
+th {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: 0.5rem;
+}
+
+td { padding: 0.4rem;}
+
+td:nth-child(2) {text-align: center;}
+
+/* Selecionando os ultimos <th> e <td> */
+td:last-child, th:last-child {
+    text-align: light;}
+
+    /* Selecionando linhas alternadas. podemos usar even (impares) ou add (pares) */
+    tr:nth-child(even){
+        background-color:var(--cor-clara)
+    }
