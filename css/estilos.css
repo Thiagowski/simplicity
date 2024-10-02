@@ -58,7 +58,7 @@ a {
  
 .topo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     position: sticky; /*manter determinado item fixo*/
     top: 0;
@@ -279,4 +279,12 @@ td:last-child, th:last-child {
     /* Selecionando linhas alternadas. podemos usar even (impares) ou add (pares) */
     tr:nth-child(even){
         background-color:var(--cor-clara)
+    }
+
+    /* Classe que será aplicada em algumas partes do site visando criar limites de tamanho. */
+    .limitador {
+        width: 95vw;
+        max-width: 1000px;
+        margin: auto;
+        
     }
