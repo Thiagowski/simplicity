@@ -236,7 +236,7 @@ article address {
 .rodape{
     background-color: var(--cor-texto);
     color: var(--cor-clara);
-    height: 30vh; /* define altura da janela de visualização (viewport)*/
+    height: 10vh; /* define altura da janela de visualização (viewport)*/
     display: flex; /*Ativa o Flexbox para facilitar a centralização.*/
     justify-content: center; /*Centraliza o conteúdo horizontalmente*/
     font-weight: bold; /*negrito*/
@@ -298,4 +298,16 @@ td:last-child, th:last-child {
         background-color:var(--cor-clara)
     }
 
-    
+    .galeria {
+        text-align: center;
+    }
+
+    .galeria img {
+        border-radius:50%;
+        box-shadow: var(--cor-escura) 0 0 10px;
+        transform: scale();
+        transition: transform 0.5s ease ;
+    }
+    .galeria img:hover {
+        transform: scale(1.2);
+    }
