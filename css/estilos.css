@@ -1,100 +1,229 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-/*Alterando o box model*/
-* {box-sizing: border-box;}
-
-/* Declaração de variaveis (sempre no :root) */
+ 
+/* alterando o box model */
+* {
+    box-sizing: border-box;
+}
+ 
+/* Declaração de variaveis */
 :root {
-    --cor-titulo: #4d4d44;
+    --cor-titulo: #4d4d4d;
     --cor-texto: #333;
     --cor-escura: #000;
     --cor-clara: #fff;
     --cor-intermediaria: #ececec;
 }
-
-/*valor de referencia/base para uso da medida REM */
-html { font-size: 16px;}
-
+ 
+html {
+    font-size: 16px;
+}
+ 
 /* reset de alguns elementos */
-body, h1, h2, p, figure, .links-menu {
+body,
+h1,
+h2,
+p,
+figure,
+.links-menu {
     margin: 0;
     padding: 0;
 }
-
-img {max-width: 100%;}
-
-body{
-    font-family: 'noto-sans', sans-serif;
+ 
+img {
+    max-width: 100%;
+}
+ 
+body {
+    font-family: "Noto sans", sans-serif;
     color: var(--cor-texto);
+}
+ 
+a {
+    text-decoration: none;
+}
+ 
+.titulo {
+    font-family: Raleway, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+ 
+.titulo a {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: 0.3rem 1.0rem;
+    border: 4px;
+}
+ 
+.topo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky; /*manter determinado item fixo*/
+    top: 0;
+    background-color: var(--cor-clara);
+}
+/* testar este código no projeto integrador o fixador */
+ 
+.titulo-menu a {
+    color: var(--cor-escura);
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: inline-block;
+    /* background-color: yellow; */
+}
+ 
+.menu a:hover {
+    background-color: var(--cor-intermediaria);
+}
+ 
+.links-menu {
+    list-style: none;
+    /*tira as bolinhas da lista*/
+    display: none;
+    /*escoder algo*/
+}
+ 
+.links-menu a {
+    color: var(--cor-escura);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+ 
+/* essa regra só vai fazer sentido com o JS, o . entre uam palavra é porque só funciona a função junta, quando tem espaço entra como descendente  "cllase combinada"*/
+.links-menu.aberto {
+    display: flex;
+    /* fazer aparecer algo mais todas as vantagens do flex*/
+    flex-direction: column;
+    /* fazer com que os links fiquem dispostos em coluna*/
+    position: absolute;
+    /* para que possamos modificar e colocar em outro lugar onde colocamos left e right 0 os dois justamente para que o texto fique no meio*/
+    left: 0;
+    right: 0;
+    background-color: var(--cor-clara);
+    /*  */
+}
+ 
+.destaque {
+    height: 75vh;
+    background-image: url(../imagens/fundo-destaque.jpg);
+    background-attachment: fixed;
+    /* seletor que manter a imagem fixa e rola a imagem por cima*/
+    color: var(--cor-clara);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+/* Etapa 1: Criar regra de animação */
+ 
+/* key=chave frame=quadro */
+@keyframes animaDestaque {
+ 
+    /* Dê: (como começa) */
+    from {
+        opacity: 0;
+        transform: translateY(-500px) scale(20%);
+        /*transform efeito de movimento de cima pra baixo, scale tamanho, rotate rotação */
     }
-
-    a {text-decoration: none;}
-
-    .titulo {
-        font-family: Raleway, sans-serif;
-        text-transform: uppercase;
-        font-weight: 800;
-        font-size: 1.5rem;}
-
-        .titulo a {
-            background-color: var(--cor-escura);
-            color: var(--cor-clara);
-            padding: 0.3rem 1rem;
-            border-radius: 4px;
-        }
-
-        .topo {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .titulo-menu a {
-            color: var(--cor-escura);
-            font-size: 1.2rem;
-            padding: 1rem;
-            display: inline-block;
-        }
-
-        .menu a:hover {
-            background-color: var(--cor-intermediaria);
-        }
-
-        .links-menu {list-style: none;
-        display: none;}
-        
-
-        .links-menu a {
-            color: var(--cor-escura);
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50px;
-        }
-
-        .links-menu.aberto {
-            /*Usamos o flex para fazer os links aparecerem e ao mesmo tempo ter acesso a todas as vantagens do flex */
-            display: flex;
-            
-            /*Fazemos com que os links fiquem dispostos como coluna (verticalmente) */
-            flex-direction: column;
-            
-            /* Usamos o position absolute para "soltar" a lista de links na tela e com as propriedades/coordenadas left e right ajustar sua posição em relação as laterais */
-            position: absolute;
-            left: 0;
-            right: 0;
-
-            background-color: var(--cor-clara);
-        }
-        
-        .destaque {
-            height: 75vh;
-            background-image: url(../imagens/fundo-destaque.jpg);
-            background-attachment: fixed;
-            color: var(--cor-clara);
-            text-align: center;   
-            display: flex;
-            flex-direction: column;
-            justify-content: center;         
-        }
+ 
+    /* Para: (como termina) */
+    to {
+        opacity: 1;
+        transform: translateY() scale(1);
+    }
+ 
+}
+ 
+/* Etapa de aplicar a animação */
+.destaque h2,
+.detaque p {
+    animation-name: animaDestaque;
+    animation-duration: 1s;
+ 
+    /* Opçãoes adicionais
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
+ */
+}
+ 
+/* O clamp() no CSS é uma função que define um valor que se ajusta automaticamente dentro de um intervalo, com um valor mínimo, ideal e máximo. Ele garante que o valor fique dentro desses limites, sendo útil para criar layouts responsivos.  font-size : clamp tamanho min, ideial e maximo
+Fora que pode ser usado para outras seletores também*/
+/* .destaque h2{
+    font-size: clamp(3rem, 10vw, 7rem);
+} */
+ 
+.destaque h2{
+    font-size: clamp(1.5rem, 13vw, 3rem);
+}
+ 
+article {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-family: Raleway, sans-serif;
+    color: var(--cor-titulo);
+ 
+}
+ 
+article p{
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+ 
+article address {
+    font-style: normal;
+    font-size: 1.2rem;
+}
+ 
+.front-end, .historia, .localizacao{
+    text-align: center;
+}
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-size: cover; /*manten a cor num todo*/
+    background-attachment: fixed; /*mantem a imagem fxada*/
+}
+.historia h2 {
+    color: var(--cor-intermediaria);
+    text-shadow: 5px 7px 5px #e6810d80; /*causa o efeito de sombra, os 3 px define a altura largura e espacamento da sombra*/
+}
+.video{
+    margin-bottom: 2rem; /*Adiciona uma margem inferior de 2rem.*/
+    max-width: 700px; /*Limita a largura máxima mesmo que o container permita mais espaço*/
+    width: 100%; /*confidgura a largura*/
+}
+ 
+.mapa{
+    margin-bottom: 2rem;
+    width: 100%;
+}
+ 
+.rodape{
+    background-color: var(--cor-texto);
+    color: var(--cor-clara);
+    height: 30vh; /* define altura da janela de visualização (viewport)*/
+    display: flex; /*Ativa o Flexbox para facilitar a centralização.*/
+    justify-content: center; /*Centraliza o conteúdo horizontalmente*/
+    font-weight: bold; /*negrito*/
+    align-items: center; /*Centraliza o conteúdo verticalmente.*/
+    text-align: center; /*centralizar texto*/
+}
+ 
+/*  Regra para as demais paginas (produtos serviços e Contato) */
+ 
+.conteudo-geral{
+    background-color: var(--cor-intermediaria);
+    padding: 0.5rem;
+}
+ 
+.conteudo-geral h2{
+    padding-left: 0;
+    font-size: 1.8rem;
+    border-bottom: solid 1px; /*borda entre titulo*/
+}
+ 
