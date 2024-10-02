@@ -56,14 +56,31 @@ a {
     border: 4px;
 }
  
+/* Cabeçalho/topo "cheio", ou seja, pegando 100% da tela e Fixado / */
 .topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
     position: sticky; /*manter determinado item fixo*/
     top: 0;
     background-color: var(--cor-clara);
 }
+
+/* div com classe limitador DENTRO do Topo (Sub Cabeçalho); aplicamos os ajustes de layout (Flex)  */
+.topo .limitador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Classe que será aplicada em algumas partes do site visando criar limites de tamanho. */
+.limitador {
+    width: 95vw;
+    max-width: 1000px;
+    margin: auto;
+    
+    
+}
+
+
 /* testar este código no projeto integrador o fixador */
  
 .titulo-menu a {
@@ -281,10 +298,4 @@ td:last-child, th:last-child {
         background-color:var(--cor-clara)
     }
 
-    /* Classe que será aplicada em algumas partes do site visando criar limites de tamanho. */
-    .limitador {
-        width: 95vw;
-        max-width: 1000px;
-        margin: auto;
-        
-    }
+    
