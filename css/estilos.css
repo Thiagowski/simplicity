@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
- 
+
 /* alterando o box model */
 * {
     box-sizing: border-box;
 }
- 
+
 /* Declaração de variaveis */
 :root {
     --cor-titulo: #4d4d4d;
@@ -13,11 +13,11 @@
     --cor-clara: #fff;
     --cor-intermediaria: #ececec;
 }
- 
+
 html {
     font-size: 16px;
 }
- 
+
 /* reset de alguns elementos */
 body,
 h1,
@@ -28,39 +28,41 @@ figure,
     margin: 0;
     padding: 0;
 }
- 
+
 img {
     max-width: 100%;
 }
- 
+
 body {
     font-family: "Noto sans", sans-serif;
     color: var(--cor-texto);
 }
- 
+
 a {
     text-decoration: none;
 }
- 
+
 .titulo {
     font-family: Raleway, sans-serif;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.5rem;
 }
- 
+
 .titulo a {
     background-color: var(--cor-escura);
     color: var(--cor-clara);
     padding: 0.3rem 1.0rem;
     border: 4px;
 }
- 
+
 /* Cabeçalho/topo "cheio", ou seja, pegando 100% da tela e Fixado / */
 .topo {
 
-    position: sticky; /*manter determinado item fixo*/
+    position: sticky;
+    /*manter determinado item fixo*/
     top: 0;
+    z-index: 10;
     background-color: var(--cor-clara);
 }
 
@@ -76,13 +78,13 @@ a {
     width: 95vw;
     max-width: 1000px;
     margin: auto;
-    
-    
+
+
 }
 
 
 /* testar este código no projeto integrador o fixador */
- 
+
 .titulo-menu a {
     color: var(--cor-escura);
     font-size: 1.2rem;
@@ -90,18 +92,18 @@ a {
     display: inline-block;
     /* background-color: yellow; */
 }
- 
+
 .menu a:hover {
     background-color: var(--cor-intermediaria);
 }
- 
+
 .links-menu {
     list-style: none;
     /*tira as bolinhas da lista*/
     display: none;
     /*escoder algo*/
 }
- 
+
 .links-menu a {
     color: var(--cor-escura);
     font-weight: bold;
@@ -110,7 +112,7 @@ a {
     align-items: center;
     height: 50px;
 }
- 
+
 /* essa regra só vai fazer sentido com o JS, o . entre uam palavra é porque só funciona a função junta, quando tem espaço entra como descendente  "cllase combinada"*/
 .links-menu.aberto {
     display: flex;
@@ -124,7 +126,7 @@ a {
     background-color: var(--cor-clara);
     /*  */
 }
- 
+
 .destaque {
     height: 75vh;
     background-image: url(../imagens/fundo-destaque.jpg);
@@ -136,78 +138,85 @@ a {
     flex-direction: column;
     justify-content: center;
 }
- 
+
 /* Etapa 1: Criar regra de animação */
- 
+
 /* key=chave frame=quadro */
 @keyframes animaDestaque {
- 
+
     /* Dê: (como começa) */
     from {
         opacity: 0;
         transform: translateY(-500px) scale(20%);
         /*transform efeito de movimento de cima pra baixo, scale tamanho, rotate rotação */
     }
- 
+
     /* Para: (como termina) */
     to {
         opacity: 1;
         transform: translateY() scale(1);
     }
- 
+
 }
- 
+
 /* Etapa de aplicar a animação */
 .destaque h2,
 .detaque p {
     animation-name: animaDestaque;
     animation-duration: 1s;
- 
+
     /* Opçãoes adicionais
  animation-iteration-count: infinite;
  animation-direction: alternate;
  */
 }
- 
+
 /* O clamp() no CSS é uma função que define um valor que se ajusta automaticamente dentro de um intervalo, com um valor mínimo, ideal e máximo. Ele garante que o valor fique dentro desses limites, sendo útil para criar layouts responsivos.  font-size : clamp tamanho min, ideial e maximo
 Fora que pode ser usado para outras seletores também*/
 /* .destaque h2{
     font-size: clamp(3rem, 10vw, 7rem);
 } */
- 
-.destaque h2{
+
+.destaque h2 {
     font-size: clamp(1.5rem, 13vw, 3rem);
 }
- 
+
 article {
     padding: 1rem;
     font-size: 1.4rem;
     font-family: Raleway, sans-serif;
     color: var(--cor-titulo);
- 
+
 }
- 
-article p{
+
+article p {
     padding: 0.5rem;
     font-size: 1.2rem;
 }
- 
+
 article address {
     font-style: normal;
     font-size: 1.2rem;
 }
- 
-.front-end, .historia, .localizacao{
+
+.front-end,
+.historia,
+.localizacao {
     text-align: center;
 }
+
 .historia {
     background-image: url(../imagens/fundo-madeira.jpg);
-    background-size: cover; /*manten a cor num todo*/
-    background-attachment: fixed; /*mantem a imagem fxada*/
+    background-size: cover;
+    /*manten a cor num todo*/
+    background-attachment: fixed;
+    /*mantem a imagem fxada*/
 }
+
 .historia h2 {
     color: var(--cor-intermediaria);
-    text-shadow: 5px 7px 5px #e6810d80; /*causa o efeito de sombra, os 3 px define a altura largura e espacamento da sombra*/
+    text-shadow: 5px 7px 5px #e6810d80;
+    /*causa o efeito de sombra, os 3 px define a altura largura e espacamento da sombra*/
 }
 
 .historia iframe {
@@ -222,49 +231,59 @@ article address {
 
 }
 
-.video{
-    margin-bottom: 2rem; /*Adiciona uma margem inferior de 2rem.*/
-    max-width: 700px; /*Limita a largura máxima mesmo que o container permita mais espaço*/
-    width: 100%; /*confidgura a largura*/
+.video {
+    margin-bottom: 2rem;
+    /*Adiciona uma margem inferior de 2rem.*/
+    max-width: 700px;
+    /*Limita a largura máxima mesmo que o container permita mais espaço*/
+    width: 100%;
+    /*confidgura a largura*/
 }
- 
-.mapa{
+
+.mapa {
     margin-bottom: 2rem;
     width: 100%;
 }
- 
-.rodape{
+
+.rodape {
     background-color: var(--cor-texto);
     color: var(--cor-clara);
-    height: 10vh; /* define altura da janela de visualização (viewport)*/
-    display: flex; /*Ativa o Flexbox para facilitar a centralização.*/
-    justify-content: center; /*Centraliza o conteúdo horizontalmente*/
-    font-weight: bold; /*negrito*/
-    align-items: center; /*Centraliza o conteúdo verticalmente.*/
-    text-align: center; /*centralizar texto*/
+    height: 10vh;
+    /* define altura da janela de visualização (viewport)*/
+    display: flex;
+    /*Ativa o Flexbox para facilitar a centralização.*/
+    justify-content: center;
+    /*Centraliza o conteúdo horizontalmente*/
+    font-weight: bold;
+    /*negrito*/
+    align-items: center;
+    /*Centraliza o conteúdo verticalmente.*/
+    text-align: center;
+    /*centralizar texto*/
 }
- 
+
 /*  Regra para as demais paginas (produtos serviços e Contato) */
- 
-.conteudo-geral{
+
+.conteudo-geral {
     background-color: var(--cor-intermediaria);
     padding: 0.5rem;
 }
- 
-.conteudo-geral h2{
+
+.conteudo-geral h2 {
     padding-left: 0;
     font-size: 1.8rem;
-    border-bottom: solid 1px; /*borda entre titulo*/
+    border-bottom: solid 1px;
+    /*borda entre titulo*/
 }
- 
+
 /* Regras para tabela */
 
-table { 
+table {
     border: solid 4px var(--cor-escura);
     width: 80%;
     max-width: 600px;
     margin: auto;
-    
+
     /* Remove o espaçamento entre as bordas */
     border-collapse: collapse;
 }
@@ -275,7 +294,8 @@ caption {
     padding-bottom: 0.3rem;
 }
 
-th, td {
+th,
+td {
     border: solid 1px var(--cor-escura);
 }
 
@@ -285,29 +305,74 @@ th {
     padding: 0.5rem;
 }
 
-td { padding: 0.4rem;}
+td {
+    padding: 0.4rem;
+}
 
-td:nth-child(2) {text-align: center;}
+td:nth-child(2) {
+    text-align: center;
+}
 
 /* Selecionando os ultimos <th> e <td> */
-td:last-child, th:last-child {
-    text-align: light;}
+td:last-child,
+th:last-child {
+    text-align: light;
+}
 
-    /* Selecionando linhas alternadas. podemos usar even (impares) ou add (pares) */
-    tr:nth-child(even){
-        background-color:var(--cor-clara)
+/* Selecionando linhas alternadas. podemos usar even (impares) ou add (pares) */
+tr:nth-child(even) {
+    background-color: var(--cor-clara)
+}
+
+.galeria {text-align: center;}
+
+.galeria img {
+    border-radius: 50%;
+    box-shadow: var(--cor-escura) 0 0 10px;
+    transform: scale(0.8) rotate(-20deg);
+    transition: 0.5s;
+}
+
+.galeria img:hover {
+    transform: scale(1);
+}
+
+
+@media screen and (min-width: 600px) {
+
+    /* Escondendo a palavra menu */
+    .titulo-menu {
+        display: none;
     }
 
-    .galeria {
-        text-align: center;
+    /* exibindo os links do menu */
+    .links-menu {
+        display: flex;
     }
 
-    .galeria img {
-        border-radius:50%;
-        box-shadow: var(--cor-escura) 0 0 10px;
-        transform: scale();
-        transition: transform 0.5s ease ;
+    /* Ajustamos o tamanho do menu (nav) fazendo-o "esticar", aumentando o espaçamento dentro dele. */
+    .menu {
+        width: 60%;
     }
-    .galeria img:hover {
-        transform: scale(1.2);
+
+    /* forçamos cada item (li) da lista a ter largura total e, com isso, redistribuir e ocupar todos os espaços dentro do menu (nav) */
+    .links-menu li {
+        width: 100%;
     }
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    /* Aumentamos o tamanho base do font-size. Desta forma, todos os textos do site (em especifico os que usam REM), mudam de tamanho proporcionalmente */
+    html {
+        font-size: 20px;
+    }
+
+
+    /* Aumentamos a altura da div.limitador contido no topo (header) */
+    .topo .limitador {
+        height: 100px;
+    }
+
+}
