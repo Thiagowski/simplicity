@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Simplicity</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+    <header class="topo">
+
+        <div class="limitador">
+            <h1 class="titulo"><a href="index.html">Simplicity</a></h1>
+
+            <nav class="menu">
+
+                <h2 class="titulo-menu"><a href="">Menu &equiv;</a></h2>
+                <ul class="links-menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Produtos</a></li>
+                    <li><a href="">Serviços</a></li>
+                    <li><a href="">Contato</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <main class="conteudo">
+
+        <article class="conteudo-geral limitador">
+
+            <h2>Contato</h2>
+            <p>
+                Entre em contato conosco para discutir seus projetos e necessidades. Preencha o formulário abaixo e
+                nossa equipe retornará em breve. Estamos ansiosos para trabalhar com você!
+            </p>
+
+
+            <p>Atenção: os campos <b>Nome</b>, <b>E-mail</b> e <b>Mensagem</b> são <u>obrigatórios</u>.</p>
+
+
+            <!-- GET envia dados via URL, ficam exposyos na barra de endereços. Bom para formulario de busca -->
+
+            <!-- POST -> envia dados via corpo de formulario, não ficam expostos.É o recomendavel para formularios de cadastros e contato em geral -->
+            <form action="" method="post">
+
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome completo">
+                </div>
+
+                <div>
+                    <label for="email">E-Mail:</label>
+                    <input type="email" name="email" id="email" placeholder="digite seu email">
+                </div>
+
+                <div>
+                    <label for="nascimento">Data de nascimento:</label>
+                    <input type="date" name="nascimento" id="nascimento">
+                </div>
+
+            </form>
+
+        </article>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Site desenvolvido para fins educacionais</p>
+    </footer>
+</body>
+
+</html>
